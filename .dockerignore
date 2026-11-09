@@ -51,6 +51,13 @@ prototipo/backend/tests/
 *.sqlite3
 !prototipo/backend/app/fashionstore_local.db
 
+# Pytest y directorios temporales de pruebas
+fashionstore_tests_*/
+
+# Almacenamiento de respaldos en tiempo de ejecución
+prototipo/backend/storage/backups/*.gz
+prototipo/backend/storage/backups/*.wal.gz
+
 # Documentación, diagramas Enterprise Architect y archivos pesados
 DOCUMENTACION2/
 documentacion/

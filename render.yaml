@@ -14,13 +14,13 @@ services:
       - key: EMAIL_HOST_USER
         value: mrgrueso2005@gmail.com
       - key: EMAIL_HOST_PASSWORD
-        value: plwx ztda stmt qxeu
+        value: skzu utvh dncn abqy
       - key: DEFAULT_FROM_EMAIL
         value: SIGEPSI <mrgrueso2005@gmail.com>
       - key: STRIPE_SECRET_KEY
-        sync: false
+        value: sk_test_51UEsz81HD8WYieY54Eoz9aGdj05qbsEnEbLOISaxEf5TF2E6RWswKA3lsGO0Au0YVodJ0JOqbRElxv5GUlgwcYHY00LRGUdXFK
       - key: STRIPE_PUBLISHABLE_KEY
-        sync: false
+        value: pk_test_51UEsz81HD8WYieY5OVqcN7AqDcwmlIpf9ClUu7VzfdPDigt5FgbaTPuk8cErY6ySu3CXc8U0r7SY2UINr0e3AMyg00LCwwrfgN
       - key: STRIPE_CURRENCY
         value: bob
       - key: FORCE_SEED

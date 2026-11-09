@@ -191,6 +191,20 @@ def startup_event():
     except Exception as e:
         print(f" [STARTUP] ERROR en bootstrap multitenant: {e}")
 
+    # Siembra de operaciones multitenant (ventas, kardex, bitácora) si la base de datos está vacía o se fuerza
+    try:
+        from app.scripts.seed_operaciones_tenants import ejecutar_siembra_completa
+        from app.modules.p07_venta_digital_fidelizacion.ordenes.models import OrdenVenta
+        import os
+        force_seed = os.getenv("FORCE_SEED", "false").lower() in ("true", "1")
+        db = SessionLocal()
+        if db.query(OrdenVenta).count() < 10 or force_seed:
+            print(" [STARTUP] Sembrando operaciones multitenant (ventas, kardex, bitácora)...")
+            ejecutar_siembra_completa()
+        db.close()
+    except Exception as e:
+        print(f" [STARTUP] Advertencia en siembra de operaciones multitenant: {e}")
+
 
 @app.get("/health", tags=["Estado del Sistema"])
 def health_check():
